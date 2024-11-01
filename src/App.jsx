@@ -13,6 +13,9 @@ const initProduct = {
   name:"",
   price:0,
 }
+const getBaseURL = ()=>{
+  return import.meta.env.PROD ? `http://${location.hostname}` : "http://localhost:8080";
+}
 const getAllProductsApi = async () =>{
   const { data } = await axios({
     method:"GET",
