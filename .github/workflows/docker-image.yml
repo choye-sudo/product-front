@@ -27,7 +27,7 @@ jobs:
       run: npm run build
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USERNAME}}/${{secrets.DOCKER_REPO}}:$(date +%s)
 
     - name: Docker Login
       uses: docker/login-action@v3.3.0
